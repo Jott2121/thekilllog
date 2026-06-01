@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kill Log — receipts</title>
+<style>
+  :root{--bg:#0D1117;--line:#1C2430;--txt:#c9d1d9;--mut:#6e7681;--white:#e6edf3}
+  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--txt)}
+  body{font-family:'SF Mono','Menlo','Consolas','Liberation Mono',monospace;line-height:1.5}
+  .wrap{max-width:880px;margin:0 auto;padding:56px 22px 80px}
+  header h1{font-size:46px;letter-spacing:2px;margin:0;color:var(--white)}
+  header h1 .strike{position:relative}
+  header h1 .strike:after{content:"";position:absolute;left:-4px;right:-4px;top:54%;height:6px;background:#FF5252;border-radius:3px}
+  .sub{color:var(--mut);margin:14px 0 6px;font-size:16px}
+  .tally{color:var(--mut);font-size:15px;margin-bottom:30px}
+  .tally b{color:var(--white)}
+  .rcpt{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0;background:#0e141c}
+  .rcpt-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .badge{font-size:13px;font-weight:700;border:1px solid;border-radius:5px;padding:2px 9px;letter-spacing:1px}
+  .task{color:var(--white);font-weight:700;font-size:17px}
+  .when{color:var(--mut);font-size:13px;margin-left:auto}
+  .tried{color:var(--txt);font-size:15px;margin:6px 0}
+  .why{color:var(--mut);font-size:14px;margin:6px 0}
+  .metric{margin-top:10px;font-size:14px}
+  .mk{color:var(--mut)} .mv{color:var(--white);font-weight:700;border:1px solid var(--line);border-radius:5px;padding:1px 8px}
+  footer{color:var(--mut);font-size:13px;margin-top:40px;border-top:1px solid var(--line);padding-top:18px}
+</style></head><body><div class="wrap">
+  <header>
+    <h1><span class="strike">KILL</span> LOG</h1>
+    <p class="sub">An AI-agent company, built in public. A permanent record of every
+    decision we kept and killed — with the real number. Receipts &gt; hype.</p>
+    <p class="tally"><b>6</b> kept &middot; <b>3</b> killed &middot; append-only, no edits</p>
+  </header>
+  
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">Self-improvement fold-in (Publish C Tasks 1-7) — build + independent QC</span>
+          <span class="when">2026-06-01 02:38 UTC</span>
+        </div>
+        <div class="tried">subagent built the 7-task TDD fold-in (561-&gt;? tests); ran independent 5-lens adversarial QC + per-finding skeptic verify + completeness critic; TDD-fixed every confirmed finding; independent re-review reverted each fix to prove the tests bite</div>
+        <div class="why">the builder&#x27;s OWN &#x27;QC pass&#x27; declared all invariants intact — the INDEPENDENT QC (no self-grading) then found 1 CRITICAL ledger-corruption (NaN measured_value -&gt; adopt_score NaN -&gt; SQLite NULL vs hash-over-NaN -&gt; verify_chain breaks PERMANENTLY) + 3 HIGH honesty/bias-to-NO (None-crash, bool/negative spurious pass, slack fabricated PROPOSE for un-measured candidates) + MED (slug collision suppresses real candidates; dryrun budget :-1.0 defeats fail-closed; workflow re-post spam; fictional sudo-u-killqc docs). All fixed, 538-&gt;567 tests, independent re-review PASS. Proves the no-self-grade gate is load-bearing.</div>
+        <div class="metric"><span class="mk">confirmed-integrity-bugs-fixed</span> <span class="mv">6</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">Phase C (Publish C R1-R5) independent adversarial QC</span>
+          <span class="when">2026-06-01 01:24 UTC</span>
+        </div>
+        <div class="tried">7-lens adversarial QC workflow (14 agents) + per-finding skeptic verification + completeness critic; TDD-fixed every confirmed finding; independent re-review reverted each fix to prove the tests bite</div>
+        <div class="why">independent QC (no agent grading its own work) found 2 HIGH + 1 MED REAL integrity bugs the suite missed: absent gate-summary fabricated as measured=0 (false before-&gt;after + spurious adopt at threshold&lt;=0); all same-day experiment receipts collide on one xpost key so the 2nd is silently dropped; QC-cron log unwritable so the R2 runner never runs. All fixed, 531-&gt;538 tests, re-review PASS. Skipped 2 refuted/unreachable findings honestly.</div>
+        <div class="metric"><span class="mk">confirmed-integrity-bugs-fixed</span> <span class="mv">3</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">Self-improvement loop home</span>
+          <span class="when">2026-05-31 05:34 UTC</span>
+        </div>
+        <div class="tried">drafted + shipped the Publish C fold-in hand-off plan to the working Kill Log session</div>
+        <div class="why">Jeff chose: fold into Kill Log Publish C (no separate Phase 2); plan reuses Track B research + experiments.py + ledger; pre-approved for immediate implementation, dormant/safe, activation CEO-gated</div>
+        <div class="metric"><span class="mk">thin pieces to build (vs a whole system)</span> <span class="mv">3</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#FF5252;border-color:#FF5252">KILLED</span>
+          <span class="task">Fleet Mode P2 adoption machinery</span>
+          <span class="when">2026-05-31 05:21 UTC</span>
+        </div>
+        <div class="tried">a separate Phase-2 evaluator/adoption-gate + bin/approve_improvement.py</div>
+        <div class="why">Kill Log Publish C already built it: killlog/experiments.py + bin/experiment.py (flag-&gt;promote-&gt;approve, human-gated, bias-to-NO) + experiment_outcomes view + CONFIG_VERSION/experiment_id. Reuse, don&#x27;t rebuild.</div>
+        <div class="metric"><span class="mk">duplicate components avoided</span> <span class="mv">3</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#FF5252;border-color:#FF5252">KILLED</span>
+          <span class="task">Fleet Mode P2 research agent</span>
+          <span class="when">2026-05-31 05:20 UTC</span>
+        </div>
+        <div class="tried">a separate Phase-2 frontier-scout research agent at $3/week</div>
+        <div class="why">duplicated Kill Log&#x27;s Track-B best-in-class research agent (curated sources, two-pass cost-bounded, QC-gated, dedup, ledger-stamped, 432+ tests); merged into ONE shared agent feeding both public reporting and private adoption</div>
+        <div class="metric"><span class="mk">$/week saved</span> <span class="mv">3</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">Fleet Mode P2 spec</span>
+          <span class="when">2026-05-31 04:57 UTC</span>
+        </div>
+        <div class="tried">architect self-improvement-loop spec from Leo&#x27;s context pack; ran it through an independent adversarial review against the real repo</div>
+        <div class="why">independent review = spec-sound-with-fixes (0 critical); fixed 3 important + 2 minor; review caught a factual error in Leo&#x27;s context pack (experiment_ledger DOES have append-only DB triggers)</div>
+        <div class="metric"><span class="mk">review findings fixed</span> <span class="mv">5</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#d29922;border-color:#d29922">REJECTED</span>
+          <span class="task">Fleet Mode ambient activation (this repo)</span>
+          <span class="when">2026-05-31 04:05 UTC</span>
+        </div>
+        <div class="tried">add root CLAUDE.md to make Fleet Mode automatic repo-wide</div>
+        <div class="why">CEO chose manual-invoke; a root CLAUDE.md would also steer the live Publish-B engine — defer to avoid perturbing a running production system</div>
+        <div class="metric"><span class="mk">live systems protected</span> <span class="mv">1</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">fleet-mode pilot validation</span>
+          <span class="when">2026-05-31 04:02 UTC</span>
+        </div>
+        <div class="tried">ran entire Phase 1 (skill + helper + ledger) through Fleet Mode&#x27;s own gate: deterministic checks + independent adversarial final review</div>
+        <div class="why">independent reviewer found it spec-complete &amp; correct, ship-ready; 4 minor non-blocking nits, 2 fixed</div>
+        <div class="metric"><span class="mk">tests passing (7 unit + 3 structural)</span> <span class="mv">10</span></div>
+      </article>
+
+      <article class="rcpt">
+        <div class="rcpt-h">
+          <span class="badge" style="color:#3FB950;border-color:#3FB950">KEPT</span>
+          <span class="task">fleet-mode P1 bootstrap</span>
+          <span class="when">2026-05-31 03:56 UTC</span>
+        </div>
+        <div class="tried">install inline ship-gate skill + tested receipt helper in this repo</div>
+        <div class="why">Phase 1 of the approved operating-mode spec; pilots the discipline before global rollout</div>
+        <div class="metric"><span class="mk">tasks shipped</span> <span class="mv">1</span></div>
+      </article>
+  <footer>Auto-generated from our live KILLLOG.md. The agents propose; the human keeps score.</footer>
+</div></body></html>
